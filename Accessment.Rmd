@@ -1,0 +1,17 @@
+#This is the reproducible research accessment#
+
+let's set the work directory and load data
+
+```{r}
+setwd("C:/Users/admin/Desktop/WD")
+rs<-read.csv("activity.csv")
+library(dplyr)
+```
+
+Calculate total number of steps taken per day
+
+```{r}
+rs1<-group_by(rs,date)
+rs2<-summarise(rs1,total=sum(steps))
+hist(rs2$total,col="Red",main="Total steps per Day",xlab="Total Steps")
+```
