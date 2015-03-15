@@ -15,3 +15,24 @@ rs1<-group_by(rs,date)
 rs2<-summarise(rs1,total=sum(steps))
 hist(rs2$total,col="Red",main="Total steps per Day",xlab="Total Steps")
 ```
+
+
+
+
+
+
+Summary the result to get the median and mean
+
+
+
+```{r}
+summary(rs2)
+```
+
+
+Calculate the average steps per day and draw plot
+
+```{r}
+rs3<-summarise(rs1,perday=mean(steps))
+plot(rs3$date,rs3$perday,type="l")
+```
